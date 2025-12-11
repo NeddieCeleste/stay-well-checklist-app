@@ -1,0 +1,10 @@
+1. Alarm
+- for wakeup based on day of the week
+2. Interactive sounds depending on tasks
+- for example dog going out - woof woof
+3. *Voice command
+4. Visuals, stickers (pre-existing or customize)
+5. Calendar
+- mood tracking
+- reminders
+6. Color themes
