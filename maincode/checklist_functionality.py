@@ -105,50 +105,50 @@ def edit_checklist(command, main_list):
         print("No checklists found, please try again.")
     return main_list
 
+if __name__ == "__main__":
+    main_list = load_tasks()
+    checklist_contents = []
+    open_checklist = False
+    checklist_name = ""
+    while True:
 
-main_list = load_tasks()
-checklist_contents = []
-open_checklist = False
-checklist_name = ""
-while True:
+        command = input("What would you like to do?(type help for commands): ")
 
-    command = input("What would you like to do?(type help for commands): ")
+        if command == "exit":
+            main_list = save_changes(main_list, checklist_contents, checklist_name)
+            break
 
-    if command == "exit":
-        main_list = save_changes(main_list, checklist_contents, checklist_name)
-        break
+        elif command == "help":
+            help_list()
 
-    elif command == "help":
-        help_list()
+        elif command == "new checklist":
+            open_checklist = True
+            main_list, checklist_contents, checklist_name = create_new_checklist(
+                main_list,
+                checklist_contents,
+                checklist_name)
 
-    elif command == "new checklist":
-        open_checklist = True
-        main_list, checklist_contents, checklist_name = create_new_checklist(
-            main_list,
-            checklist_contents,
-            checklist_name)
+        elif command == "add entry" and open_checklist:
+            checklist_contents = add_new_entry(checklist_contents)
 
-    elif command == "add entry" and open_checklist:
-        checklist_contents = add_new_entry(checklist_contents)
+        elif "remove checklist" in command:
+            main_list = remove_checklist(main_list, command)
 
-    elif "remove checklist" in command:
-        main_list = remove_checklist(main_list, command)
+        elif command == "show all":
+            show_all_checklists(main_list)
 
-    elif command == "show all":
-        show_all_checklists(main_list)
+        elif "show" in command and len(command.split()) >= 2:
+            show_specific_checklist(main_list, command)
+            found_checklist = False
 
-    elif "show" in command and len(command.split()) >= 2:
-        show_specific_checklist(main_list, command)
-        found_checklist = False
+        elif "edit checklist" in command:
+            main_list = edit_checklist(command, main_list)
 
-    elif "edit checklist" in command:
-        main_list = edit_checklist(command, main_list)
+        elif command == "save":
+            main_list = save_changes(main_list, checklist_contents, checklist_name)
 
-    elif command == "save":
-        main_list = save_changes(main_list, checklist_contents, checklist_name)
-
-    else:
-        print("You probably made a mistake in your input! Please, try again.")
+        else:
+            print("You probably made a mistake in your input! Please, try again.")
 
 
 
