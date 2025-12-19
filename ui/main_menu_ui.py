@@ -29,6 +29,7 @@ if __name__ == "__main__":
     forme_button = QPushButton('For Me')
     settings_button = QPushButton()
 
+
     # Button styling
     button_style = """
         QPushButton {
