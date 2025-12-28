@@ -15,7 +15,7 @@ def create_calendar_page(window):
 
     # Buttons
     back_button = QPushButton()
-    back_button.setIcon(QIcon('../dist/graphics/back-button.png'))
+    back_button.setIcon(QIcon('../graphics/back-button.png'))
     back_button.setIconSize(QSize(20, 20))
     back_button.setFixedSize(20, 20)
     back_button.clicked.connect(lambda: window.setCurrentIndex(0))

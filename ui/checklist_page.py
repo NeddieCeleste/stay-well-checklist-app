@@ -24,7 +24,7 @@ def open_new_checklist_creation(main_list, refresh_page):
     new_checklist_window = QDialog()
     new_checklist_window.setWindowTitle("New Checklist")
     new_checklist_window.setStyleSheet("background-color: #f2d8e3")
-    new_checklist_window.setWindowIcon(QIcon(QPixmap("../dist/graphics/note-popup-icon.png")))
+    new_checklist_window.setWindowIcon(QIcon(QPixmap("../graphics/note-popup-icon.png")))
     new_checklist_window.setMinimumSize(400, 600)
     entry_layout = QVBoxLayout()
     entry_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
@@ -42,7 +42,7 @@ def open_new_checklist_creation(main_list, refresh_page):
     cancel_button = QPushButton("Cancel")
 
     # Button Settings:
-    add_entry_button.setIcon(QIcon(QPixmap("../dist/graphics/add-entry-button.png")))
+    add_entry_button.setIcon(QIcon(QPixmap("../graphics/add-entry-button.png")))
     add_entry_button.setIconSize(QSize(30, 30))
     add_entry_button.setFixedSize(30, 30)
     add_entry_button.clicked.connect(add_entry_row)
@@ -116,7 +116,7 @@ def create_checklist_page(window):
     checklist_page.setWindowTitle('Stay Well')
     checklist_page.setFixedSize(900, 700)
     checklist_page.setStyleSheet("background-color: #f2d8e3")
-    checklist_page.setWindowIcon(QIcon('../dist/graphics/window-icon.png'))
+    checklist_page.setWindowIcon(QIcon('../graphics/window-icon.png'))
 
 
     # Button settings
@@ -144,7 +144,7 @@ def create_checklist_page(window):
     exit_button.clicked.connect(app.quit)
     add_button.setStyleSheet(button_style)
     add_button.clicked.connect(lambda: open_new_checklist_creation(main_list, refresh_page))
-    back_button.setIcon(QIcon('../dist/graphics/back-button.png'))
+    back_button.setIcon(QIcon('../graphics/back-button.png'))
     back_button.setIconSize(QSize(20, 20))
     back_button.setFixedSize(20, 20)
     back_button.clicked.connect(lambda: window.setCurrentIndex(0))
@@ -201,7 +201,7 @@ def create_checklist_page(window):
             checklist_top_bar.addWidget(checklist_name)
             checklist_top_bar.addStretch()
             delete_checklist_button = QPushButton()
-            delete_checklist_button.setIcon(QIcon('../dist/graphics/trash-button.png'))
+            delete_checklist_button.setIcon(QIcon('../graphics/trash-button.png'))
             delete_checklist_button.setIconSize(QSize(20, 20))
             delete_checklist_button.setFixedSize(20, 20)
             checklist_top_bar.addWidget(delete_checklist_button)

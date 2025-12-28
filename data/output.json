@@ -1,0 +1,36 @@
+[
+    {
+        "Name": "makeup",
+        "Checklist": {
+            "lipstick": false,
+            "blush": true,
+            "highlighter": true,
+            "lip tint": false
+        }
+    },
+    {
+        "Name": "Groceries",
+        "Checklist": {
+            "Cucumbers": false,
+            "Eggplants": false,
+            "2 cartons of eggs": false
+        }
+    },
+    {
+        "Name": "Shows to watch",
+        "Checklist": {
+            "Big Bang Theory": true,
+            "Young Sheldon": false,
+            "2 Broke Girls": false,
+            "Dissenchanted": false
+        }
+    },
+    {
+        "Name": "Pastries",
+        "Checklist": {
+            "Croissant": true,
+            "Banitsa": true,
+            "Danish": false
+        }
+    }
+]

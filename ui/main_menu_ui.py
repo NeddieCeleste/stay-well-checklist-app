@@ -22,7 +22,7 @@ if __name__ == "__main__":
     window.setWindowTitle('Stay Well')
     window.setFixedSize(900, 700)
     window.setStyleSheet("background-color: #f2d8e3")
-    window.setWindowIcon(QIcon('../dist/graphics/window-icon.png'))
+    window.setWindowIcon(QIcon('../graphics/window-icon.png'))
 
     # Buttons creation
     todo_button = QPushButton('To-do')
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         QPushButton:hover {background-color: #ae1357;}
         QPushButton:pressed {background-color: #b791a3;}
     """
-    settings_button.setIcon(QIcon('../dist/graphics/settings-button.png'))
+    settings_button.setIcon(QIcon('../graphics/settings-button.png'))
     settings_button.setIconSize(QSize(20, 20))
     settings_button.setFixedSize(20, 20)
 
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     banner = QLabel()
     banner.setFixedHeight(200)
     banner.setStyleSheet("border: 10px groove #d74b88")
-    pixmap = QPixmap('../dist/graphics/banner-sample.jpg')
+    pixmap = QPixmap('../graphics/banner-sample.jpg')
     banner.setPixmap(pixmap)
     banner.setScaledContents(True)
     banner.setAlignment(Qt.AlignmentFlag.AlignCenter)
