@@ -6,12 +6,12 @@ def load_tasks():
     checklist_data = []
     filename = "../dist/data/output.json"
     if not os.path.exists(filename):
-        # File does not exist → return empty list
+
         return checklist_data
 
-    # File exists — check if it has content
+
     if os.path.getsize(filename) == 0:
-        # File is empty → return empty list
+
         return checklist_data
 
     with open("../dist/data/output.json", "r") as outfile:
@@ -19,17 +19,17 @@ def load_tasks():
 
 
 def create_new_checklist(main_list, checklist_contents, checklist_name):
-    # If there is content in the buffer, save it as a new checklist
+
     if checklist_contents:
         new_checklist = {"Name": checklist_name, "Checklist": checklist_contents.copy()}
         main_list.append(new_checklist)
-        checklist_contents = {}  # Reset for the next one
+        checklist_contents = {}
 
     return main_list, checklist_contents
 
 
 def add_new_entry(checklist_contents, task_name):
-    # Direct assignment: Set the task name as Key and False (not done) as Value
+
     checklist_contents[task_name] = False
     return checklist_contents
 
@@ -37,7 +37,7 @@ def add_new_entry(checklist_contents, task_name):
 def show_all_checklists(main_list):
     for checklist in main_list:
         print(f"{checklist['Name']}:")
-        # Loop through Key (task) and Value (status)
+
         for task, is_completed in checklist['Checklist'].items():
             status_mark = "[x]" if is_completed else "[ ]"
             print(f"* {status_mark} {task}")
@@ -52,7 +52,7 @@ def remove_checklist(main_list, checklist):
 
 def save_changes(main_list):
     with open("../dist/data/output.json", "w") as outfile:
-        json.dump(main_list, outfile, indent=4)  # indent=4 makes it readable
+        json.dump(main_list, outfile, indent=4)
     return main_list
 
 
